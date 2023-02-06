@@ -1,13 +1,15 @@
 package ru.ant1m0.springlearningwebapi;
 
-import org.springframework.boot.SpringApplication;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@Slf4j
+@SpringBootApplication(exclude =  {DataSourceAutoConfiguration.class })
 public class SpringLearningWebApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringLearningWebApiApplication.class, args);
-	}
+    public SpringLearningWebApiApplication(){
+        log.info("HELLO!");
+    }
 
 }
